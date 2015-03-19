@@ -1,3 +1,20 @@
+1. Modifications done in index.html to get the page speed score above 90:
+
+  * Got rid of the webfonts
+  * Optimized images in index.html
+  * Copied render blocking css from an external css file and inlined it in the html file.
+  * Removed most of the whitespace. Did not minify the code as it makes difficult to read the code.
+  * Added async to external javascript that was not relevant for DOM construction. <script src="http://www.google-analytics.com/analytics.js" async></script>
+  * Moved analytics javascript function to the bottom of the page so that it does not block the parser from DOM construction.
+
+2. Changes made in views/js/main.js
+  a. To obtain the time<5ms to resize pizzas, added 3 classes (small, medium and large) to views/css/style.css. Created resizePizzas function that got rid of complex javascript to calculate dimensions and resize pizzas by applying css classes.
+
+  b. To get the frame rate of 60fps wheb scrolling in pizza.html, commented out the entire updatePositions() function in views/js/main. (please see comments right above updatePositions)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
@@ -74,15 +91,4 @@ Feeling uninspired by the portfolio? Here's a list of cool portfolios I found af
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1. Modifications done in index.html to get the page speed score above 90:
 
-	* Got rid of the webfonts
-	* Copied render blocking css from an external css file and inlined it in the html file.
-	* Removed most of the whitespace. Did not minify the code as it makes difficult to read the code.
-	* Added async to external javascript that was not relevant for DOM construction. <script src="http://www.google-analytics.com/analytics.js" async></script>
-	* Moved analytics javascript function to the bottom of the page so that it does not block the parser from DOM construction.
-
-2. Changes made in views/js/main.js
-	a. To obtain the time<5ms to resize pizzas, added 3 classes (small, medium and large) to views/css/style.css. Created resizePizzas function that got rid of complex javascript to calculate dimensions and resize pizzas by applying css classes.
-
-	b. To get the frame rate of 60fps wheb scrolling in pizza.html, commented out the entire updatePositions() function in views/js/main. (please see comments right above updatePositions)
