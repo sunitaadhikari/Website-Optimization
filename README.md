@@ -12,6 +12,13 @@
 
   b. To get the frame rate of 60fps wheb scrolling in pizza.html, commented out the entire updatePositions() function in views/js/main. (please see comments right above updatePositions)
 
+Resources Used:
+www.udacity.com
+https://ngrok.com/
+http://httpd.apache.org/
+https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
+http://engineering.wingify.com/posts/getting-60fps-using-devtools/
+https://developers.google.com/speed/pagespeed/insights/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
