@@ -19,6 +19,7 @@ Resources Used:
 * https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 * http://engineering.wingify.com/posts/getting-60fps-using-devtools/
 * https://developers.google.com/speed/pagespeed/insights/
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
