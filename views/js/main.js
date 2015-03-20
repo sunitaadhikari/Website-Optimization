@@ -543,23 +543,20 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
-
-
-/* This comes at the cost of FPS while scrolling. Tried to optimize it by using
-  the cachedScrollTop as suggested in the https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
-  however, this is still not enough to bring the FPS to anywhere near 60. The only viable solution appears to be
-  to not use this scroll animation at all.
-*/
 function updatePositions() {
-  /*
+
   frame++;
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
-  var cachedScrollTop = document.body.scrollTop;
+  /*
+  Moving the constant calculations outside of the for loop so that the same calculations don't
+  re-occur at each iteration.
+  */
+  var initialPhase = Math.sin(document.body.scrollTop / 1250);
 
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((cachedScrollTop / 1250) + (i % 5));
+    var phase =  initialPhase + (i % 5);
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -570,18 +567,19 @@ function updatePositions() {
   if (frame % 10 === 0) {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
-  }*/
+  }
 }
 
 // runs updatePositions on scroll
 
-//window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  //There are about 30 pizzas at any given time. Changing it to 30 from 200.
+  for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
@@ -591,5 +589,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  //updatePositions();
+  updatePositions();
 });

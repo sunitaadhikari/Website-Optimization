@@ -10,7 +10,7 @@
 2. Changes made in views/js/main.js
   a. To obtain the time<5ms to resize pizzas, added 3 classes (small, medium and large) to views/css/style.css. Created resizePizzas function that got rid of complex javascript to calculate dimensions and resize pizzas by applying css classes.
 
-  b. To get the frame rate of 60fps wheb scrolling in pizza.html, commented out the entire updatePositions() function in views/js/main. (please see comments right above updatePositions)
+  b. To get the frame rate of 60fps when scrolling in pizza.html, moved the constant calculations outside of the for loop so that the same calculations don't re-occur at each iteration. Changed the number of pizzas from 200 to 30 at any given time. for (var i = 0; i < 30; i++)
 
 Resources Used:
 www.udacity.com
