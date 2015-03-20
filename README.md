@@ -13,12 +13,13 @@
   b. To get the frame rate of 60fps when scrolling in pizza.html, moved the constant calculations outside of the for loop so that the same calculations don't re-occur at each iteration. Changed the number of pizzas from 200 to 30 at any given time. for (var i = 0; i < 30; i++)
 
 Resources Used:
-www.udacity.com
-https://ngrok.com/
-http://httpd.apache.org/
-https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
-http://engineering.wingify.com/posts/getting-60fps-using-devtools/
-https://developers.google.com/speed/pagespeed/insights/
+* www.udacity.com
+* https://ngrok.com/
+* http://httpd.apache.org/
+* https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
+* http://engineering.wingify.com/posts/getting-60fps-using-devtools/
+* https://developers.google.com/speed/pagespeed/insights/
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
